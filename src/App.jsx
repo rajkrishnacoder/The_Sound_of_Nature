@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function App() {
+  const [data1, setData1] = useState(null)
+
+  function submit(event){
+    event.preventDefault()
+    const data = new FormData(event.target)
+    let helper = {}
+    data.forEach((value, key)=>{
+      helper[key] = value
+    })
+    setData1(helper)
+    console.log(data1)
+  }
+
 
   return (
-    <div className='h-screen gap-1 bg-slate-900 grid place-content-center'>
-      <div className="relative">
-        <div className="absolute -inset-0.5 opacity-75 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur"></div>
-      <button className="px-7  relative bg-black rounded-lg loading-none flex items-center py-2 divide-x divide-gray-600">
-        <span className="text-gray-100 pr-6">Labs realease</span>
-        <span className="text-indigo-400 pl-6">SUBMIT</span>
-      </button>
-      </div>
+    <div className='h-screen  bg-slate-900 text-white'>
+      <h2>this is form tutorial</h2>
+      <form className='grid gap-2 text-green-500' onSubmit={submit}>
+        <div>Name:<input className=''  type="text" name='myname:' /></div>
+        <div>Role:<input type="text" name='myRoll:'/></div>
+        <div>date<input type="date" name='mydate:' /></div>
+        <div>talk about your self <br /><textarea name="mytext:" cols="20" rows="10" id=""></textarea></div>
+        <button type='sumbit'>submit</button>
+      </form>
     </div>
   )
 }
