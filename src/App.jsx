@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 function App() {
   const [data1, setData1] = useState(null)
 
@@ -17,14 +18,7 @@ function App() {
 
   return (
     <div className='h-screen  bg-slate-900 text-white'>
-      <h2>this is form tutorial</h2>
-      <form className='grid gap-2 text-green-500' onSubmit={submit}>
-        <div>Name:<input className=''  type="text" name='myname:' /></div>
-        <div>Role:<input type="text" name='myRoll:'/></div>
-        <div>date<input type="date" name='mydate:' /></div>
-        <div>talk about your self <br /><textarea name="mytext:" cols="20" rows="10" id=""></textarea></div>
-        <button type='sumbit'>submit</button>
-      </form>
+      <input type="range" className=' h-1 mb-6 bg-gray-200 cursor-pointer  dark:bg-gray-700' />
     </div>
   )
 }
