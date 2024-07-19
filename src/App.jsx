@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Input from './component/Input'
 
 
 function App() {
@@ -13,13 +14,16 @@ function App() {
     })
     setData1(helper)
     console.log(data1)
+  
   }
 
 
   return (
-    <div className='h-screen  bg-slate-900 text-white'>
-      <input type="range" className=' h-1 mb-6 bg-gray-200 cursor-pointer  dark:bg-gray-700' />
-    </div>
+    <form onSubmit={submit}>
+      <Input/>
+      <button type='submit'>submit</button>
+      <input type="text" name='age' className='bg-slate-400'/>
+    </form>
   )
 }
 
