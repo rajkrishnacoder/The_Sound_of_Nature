@@ -1,23 +1,15 @@
 import React, { useState } from 'react'
-import Input from './component/Input'
 import { useForm } from 'react-hook-form'
+import {GroupCard} from './component'
 
 
 function App() {
-  const {register, handleSubmit} = useForm()
 
-  const submit = (data) => {
-    console.log(data)
-  }
 
   return (
-    <form onSubmit={handleSubmit(submit)}>
-      <button>submit</button>
-      <Input label="name: " {...register("name", {
-        required: true
-      })}/>
-      <Input label="age: "{...register("age")}/>
-    </form>
+    <div className="h-screen bg-gradient-to-b from-slate-600 via-slate-700 to-slate-900 flex justify-center items-center">
+      <GroupCard/>
+    </div>
   )
 }
 
