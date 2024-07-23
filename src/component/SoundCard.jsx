@@ -1,12 +1,38 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
+import current, {status} from '../sounds/current';
 
-function Sound() {
+function Sound({
+    image,
+    song,
+}) {
+    let songValue = 0
+    const [value , setValue] = useState(songValue)
+
+    const click = () =>{
+        if(!status[song["title"]]){
+            songValue = 4
+            setValue(songValue)
+
+            song.audio.play().autoplay = true
+            song.audio.loop = true
+            song.audio.volume = songValue/30
+            current.addValue(song)
+        }
+    }
+    const soundValueme = (e)=>{
+      songValue = e.target.value
+      song.audio.volume = songValue != 0 ? songValue/20 : 0.0
+    }
+
+    
     return (
         <div className='flex flex-wrap flex-col te gap-3  justify-center items-center'>
-            <div className='bg-cover h-[5rem] w-[5rem] rounded-xl cursor-pointer' style={{
-                    backgroundImage: 'url(https://cdn.pixabay.com/photo/2024/01/24/22/23/boy-8530678_640.png)',
+            <div onClick={click}  className='bg-cover h-[5rem] w-[5rem] rounded-xl cursor-pointer' style={{
+                    backgroundImage: `url(${image})`,
                 }}></div>
-            <input type="range" min={0} max={30} value={0} className='h-1.5 w-[5rem] cursor-pointer'/>
+            <input type="range" min={0} max={20} value={value} className='h-1.5 w-[5rem] cursor-pointer '
+            onChange={soundValueme}
+            />
         </div>
     );
 }

@@ -7,7 +7,7 @@ function App() {
 
 
   return (
-    <div className="h-screen bg-gradient-to-b from-slate-600 via-slate-700 to-slate-900 flex justify-center items-center">
+    <div className="h-screen bg-auto bg-gradient-to-b from-black to-green-700  flex justify-center items-center">
       <GroupCard/>
     </div>
   )
