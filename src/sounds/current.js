@@ -7,7 +7,10 @@ class Currently {
     addValue(songData){
         if(!this.current[songData["title"]]) this.current[songData["title"]] = songData
     }
-
+    
+    removeValue(songData){
+        if(this.current[songData["title"]]) delete this.current[songData["title"]]
+    }
 }
 
 const current = new Currently()

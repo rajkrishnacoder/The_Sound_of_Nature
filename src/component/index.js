@@ -1,9 +1,11 @@
 import Input from "./Input";
-import SoundCard from "./SoundCard";
-import GroupCard from "./GroupCard";
+import SoundCard from "./cards/SoundCard";
+import GroupCard from "./cards/GroupCard";
+import PlayCard from "./cards/PlayCard";
 
 export {
     Input,
     SoundCard,
-    GroupCard
+    GroupCard, 
+    PlayCard
 }
