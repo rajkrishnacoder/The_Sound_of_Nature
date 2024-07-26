@@ -40,7 +40,7 @@ function Sound({
     
     return (
         <div className='flex flex-wrap flex-col te gap-3  justify-center items-center'>
-            <div onClick={click}  className={`bg-cover h-[5rem] w-[5rem] rounded-3xl cursor-pointer flex  justify-center items-center 
+            <div onClick={click}  className={`bg-cover domHelper h-[5rem] w-[5rem] rounded-3xl cursor-pointer flex  justify-center items-center 
              border-[2px] ${color ? "border-black" : "border-gray-60"} ${color ? "bg-white" : null}`} >
 
             <Icon icon={image} width={width} height={height}  style={{color: color ? "black" : "white"}} />
