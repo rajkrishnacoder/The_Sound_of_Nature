@@ -1,16 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import current,{status} from '../../sounds/current';
+
+
 
 function PlayCard() {
     const [on, setOn] = useState(false)
+    const [playuser, setUser] = useState(false)
 
+    const observer = ()=>{
+        const length = current.getLength()
+        if(length == 1 && !on && !playuser) setOn(true)
+        else if(length == 0 && !playuser) ""
+    }
+    
     const play = ()=>{
-        on ? setOn(false) : setOn(true)
+        const key = Object.keys(status)
+
+        if(on){
+            key.forEach(element => {
+                status[element].audio.pause()
+            }); 
+        }else{
+           key.forEach(element => {
+                status[element].audio.play()
+           }); 
+        }
+        setOn(prevOn => !prevOn)
     }
 
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            observer()
+        },1000)
+
+        return ()=> clearInterval(interval)
+    },[])
+  
     return (
         <div className='p-4 pb-6  w-full gap-[0.6rem] flex items-center justify-center  flex-col bg-black'>
-
             <div className='flex items-center gap-3 h-[2.6rem]' >
                 <Icon icon="material-symbols:skip-next-rounded" width="2.4rem" height="2.4rem" flip='horizontal' style={{color: "white"}} className='cursor-pointer' />
                
@@ -26,5 +54,6 @@ function PlayCard() {
         </div>
     );
 }
+
 
 export default PlayCard

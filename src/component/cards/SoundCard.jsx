@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import current, {status} from '../../sounds/current';
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon} from '@iconify/react';
 
 function Sound({
     image,
@@ -11,6 +11,7 @@ function Sound({
     let songValue = 0
     const [value , setValue] = useState(songValue)
     const [color, setColor] = useState(false)
+  
 
     const click = () =>{
         let me = value
@@ -29,13 +30,13 @@ function Sound({
             song.audio.pause()
             current.removeValue(song)
         }
+        
     }
     const soundValueme = (e)=>{
       songValue = e.target.value
       song.audio.volume = songValue/20
       setValue(songValue)
     }
-    
     
     return (
         <div className='flex flex-wrap flex-col te gap-3  justify-center items-center'>
