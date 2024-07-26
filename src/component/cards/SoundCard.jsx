@@ -20,6 +20,7 @@ function Sound({
             setValue(songValue)
             setColor(true)
 
+            song.audio.currentTime = 0
             song.audio.play().autoplay = true
             song.audio.loop = true
             song.audio.volume = songValue/30
@@ -30,7 +31,6 @@ function Sound({
             song.audio.pause()
             current.removeValue(song)
         }
-        
     }
     const soundValueme = (e)=>{
       songValue = e.target.value

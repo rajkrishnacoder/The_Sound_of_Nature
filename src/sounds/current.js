@@ -3,6 +3,7 @@ class Currently {
     constructor(){
         this.current = {}
         this.length = 0
+        this.playStatus = false
     }
 
     addValue(songData){
@@ -20,6 +21,12 @@ class Currently {
     }
     getLength(){
         return this.length
+    }
+    updateStatus(value){
+        this.playStatus = value
+    }
+    getStatus(){
+        return this.playStatus
     }
 }
 
