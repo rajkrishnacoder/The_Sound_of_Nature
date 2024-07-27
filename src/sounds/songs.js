@@ -1,7 +1,7 @@
 const songData = {
     "rain": {
         title: "rain",
-        audio : new Audio("https://res.cloudinary.com/dfnykewn7/video/upload/v1721921020/rzd9zcjmf7ekrzbw3bne.mp3"),
+        audio: new Audio("https://res.cloudinary.com/dfnykewn7/video/upload/v1721921020/rzd9zcjmf7ekrzbw3bne.mp3"),
         image: "arcticons:emoji-cloud-with-rain"
     },
     "light-rain": {
@@ -11,7 +11,7 @@ const songData = {
     },
     "heavy-rain": {
         title: "heavy-rain",
-        audio: new Audio("https://res.cloudinary.com/dfnykewn7/video/upload/v1721921177/xc5dlih3e0knftvvuvfp.mp3"),
+        audio: new Audio( "https://res.cloudinary.com/dfnykewn7/video/upload/v1721921177/xc5dlih3e0knftvvuvfp.mp3"),
         image: "bi:cloud-rain-heavy"
     },
     "wind": {

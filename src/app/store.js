@@ -1,8 +1,9 @@
 import { configureStore} from "@reduxjs/toolkit";
+import currentSlice from "./currentSlice";
 
 const store = configureStore({
-    reducers:{
-        sample: ""
+    reducer:{
+        currentState : currentSlice
     }
 })
 

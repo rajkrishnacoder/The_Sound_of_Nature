@@ -3,7 +3,6 @@ class Currently {
     constructor(){
         this.current = {}
         this.length = 0
-        this.playStatus = false
     }
 
     addValue(songData){
@@ -22,15 +21,16 @@ class Currently {
     getLength(){
         return this.length
     }
-    updateStatus(value){
-        this.playStatus = value
+    reset(){
+        this.current = {}
+        this.length = 0
+        this.playStatus = false
     }
-    getStatus(){
-        return this.playStatus
+    status(){
+        return this.current
     }
 }
 
 const current = new Currently()
 
-export const status = current.current
 export default current
