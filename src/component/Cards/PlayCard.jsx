@@ -51,25 +51,25 @@ function PlayCard() {
     }
   
     return (
-        <div className='p-4 pb-6  w-full gap-[0.6rem] grid grid-cols-4 bg-black .helper'>
+        <div className='p-4 pb-6  w-full gap-[0.6rem] grid grid-cols-4  rounded-t-xl'>
             <div className='col-start-1'>
                
             </div>
             <div className='flex col-start-2 col-span-2 justify-center items-center flex-col gap-2'>
                 <div className='flex items-center gap-3 h-[2.6rem]' >
-                    <Icon icon="material-symbols:skip-next-rounded" width="2.4rem" height="2.4rem" flip='horizontal' style={{color: "white"}} className='cursor-pointer' />
+                    <Icon icon="material-symbols:skip-next-rounded" width="2.4rem" height="2.4rem" flip='horizontal' style={{color: "black"}} className='cursor-pointer' />
                    
-                    <div onClick={play} className=' h-[2.2rem] w-[2.2rem] bg-white flex items-center justify-center rounded-full cursor-pointer'>
-                       <Icon icon={state.on ? "bi:pause-fill" : "pepicons-pop:play"} width={state.on ? "1.7rem" : "1.6rem"} height={state.on ? "1.7rem" : "1.6rem"}  style={{color: "black"}} />
+                    <div onClick={play} className=' h-[2.2rem] w-[2.2rem] bg-black flex items-center justify-center rounded-full cursor-pointer'>
+                       <Icon icon={state.on ? "bi:pause-fill" : "pepicons-pop:play"} width={state.on ? "1.7rem" : "1.6rem"} height={state.on ? "1.7rem" : "1.6rem"}  style={{color: "white"}} />
                     </div>
     
-                     <Icon icon="material-symbols:skip-next-rounded" width="2.4rem" height="2.4rem"  style={{color: "white"}} className='cursor-pointer' />
+                     <Icon icon="material-symbols:skip-next-rounded" width="2.4rem" height="2.4rem"  style={{color: "black"}} className='cursor-pointer' />
                 </div>
     
                 <input type="range" max={100} min={0} className='h-1 cursor-pointer w-full' />
             </div>
             <div className='col-start-4 flex items-center pl-5'>
-                <Icon onClick={reset}  id='reset' icon="grommet-icons:power-reset" className='mt-4 cursor-pointer' width="1.2rem" height="1.2rem"  style={{color: "white"}} />
+                <Icon onClick={reset}  id='reset' icon="grommet-icons:power-reset" className='mt-4 cursor-pointer' width="1.2rem" height="1.2rem"  style={{color: "black"}} />
             </div>
         </div>
     );
