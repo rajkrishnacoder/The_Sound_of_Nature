@@ -28,7 +28,7 @@ export default function Header() {
   
 
   return (
-    <div  className="relative w-full bg-white/10">
+    <div  className="relative w-full lg:bg-white/10">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
           <span className="font-bold">NaTure</span>
